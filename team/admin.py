@@ -1,9 +1,10 @@
 from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
 from .models import User,Team
 
 # Register your models here.
 
-class UserAdmin(admin.ModelAdmin):
+class UserAdmin(UserAdmin):
 	list_display = ('username', 'last_login', 'phone', 'is_active')
 
 class TeamAdmin(admin.ModelAdmin):
@@ -12,7 +13,7 @@ class TeamAdmin(admin.ModelAdmin):
 	def leader_name(self, obj):
 		# print(obj.leader.values_list('username', flat=True))
 		return obj.leader.values_list('username').get()
-		
+
 	leader_name.short_description = '领队'
 
 admin.site.register(User,UserAdmin)
