@@ -13,8 +13,7 @@ class TeamAdmin(admin.ModelAdmin):
     list_display = ('name', 'leader_name', )
 
     def leader_name(self, obj):
-        # print(obj.leader.values_list('username', flat=True))
-        return obj.leader.values_list('username').get()
+        return '，'.join(obj.leader.values_list('username', flat=True))
 
     leader_name.short_description = '领队'
 
