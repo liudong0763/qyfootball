@@ -30,6 +30,7 @@
         </tr>
       </thead>
       <tbody>
+        {% if the_team %}
         <tr>
           <td>{{ the_team.name }}</td>
           <td>
@@ -41,6 +42,7 @@
               {% endfor %}
           </td>
         </tr>
+        {% endif %}
       </tbody>
     </table>
 

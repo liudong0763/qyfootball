@@ -20,7 +20,15 @@
 
   <div class="ui container" style="padding:50px">
 
-    <h2 class="ui dividing header">球队列表 - {{ area }}</h2>
+    <h2 class="ui dividing header">球队列表 - {{ area }} - {% url 'teams' %}</h2>
+    <p>
+        {% now "jS F Y H:i" %}
+        {% lorem 3 p %}
+        {# hi #}
+        {% comment "Optional note" %}
+            <p>Commented out text with {{ create_date|date:"c" }}</p>
+        {% endcomment %}
+    </p>
 
     <table class="ui table">
       <thead>

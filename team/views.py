@@ -8,7 +8,7 @@ def teams(request, area):
     # print(request.META['SERVER_NAME'])
     teams_list = Team.objects.all()
     # return HttpResponse('hello my boy')
-    print(teams_list.query)
+    # print(teams_list.query)
     return render(request, 'teams.html', locals())
 
 
