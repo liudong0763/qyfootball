@@ -49,6 +49,7 @@ class Book(models.Model):
     authors = models.ManyToManyField(Author)
     publisher = models.ForeignKey(Publisher)
     publication_date = models.DateField()
+    price = models.DecimalField(max_digits=5, decimal_places=2, default=0)
 
     class Meta:
         verbose_name = '书籍'

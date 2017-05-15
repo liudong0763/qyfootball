@@ -17,5 +17,5 @@ class TeamAdmin(admin.ModelAdmin):
 
     leader_name.short_description = '领队'
 
-admin.site.register(User,MyUserAdmin)
-admin.site.register(Team,TeamAdmin)
+admin.site.register(User, MyUserAdmin)
+admin.site.register(Team, TeamAdmin)
