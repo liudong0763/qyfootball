@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+  <meta charset="UTF-8">
+  <title>Semantic UI</title>
+  <link rel="stylesheet" href="{% static 'semantic/dist/semantic.css' %}">
+  <style>
+    body {
+      margin-bottom: 33000px;
+      padding-bottom: 33000px;
+    }
+    .ui.button {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ui container" style="padding:50px">
+
+    <h2 class="ui dividing header">表单 - 供应商</h2>
+
+{#    <form class="ui form">#}
+{#      <div class="field">#}
+{#        <label>名称</label>#}
+{#        <input type="text" name="name" placeholder="Name">#}
+{#      </div>#}
+{#      <div class="field">#}
+{#        <label>Last Name</label>#}
+{#        <input type="text" name="last-name" placeholder="Last Name">#}
+{#      </div>#}
+{#      <div class="field">#}
+{#        <div class="ui checkbox">#}
+{#          <input type="checkbox" tabindex="0" class="hidden">#}
+{#          <label>I agree to the Terms and Conditions</label>#}
+{#        </div>#}
+{#      </div>#}
+{#      <button class="ui button" type="submit">Submit</button>#}
+{#    </form>#}
+
+
+{#      <form class="ui form" action="">#}
+{#          {{ formset.management_form }}#}
+{#            {% for form in publisher_form %}#}
+{#                <div class="field">#}
+{#                <label>{{ form.name }}</label>#}
+{#                {{ form }}#}
+{#              </div>#}
+{#            {% endfor %}#}
+{#      </form>#}
+
+
+      <p>
+{#          {% load poll_extras %}#}
+{#          {% date_allen '%Y-%m-%d' as allen_time %}#}
+{#          {{ allen_time }}#}
+{#          {% get_current_time '%Y-%m-%d %I:%M:%p' as current_time %}#}
+{#          {{ current_time }}#}
+{#          {% res '二号出版社' %}#}
+          {% load poll_filter %}
+{#          {{ 'all en' | my_filter:' ' }}#}
+{#          {% with '<h1>hello</h1>' as tmp_value %}#}
+{#              <p>#}
+{#                {{ tmp_value | capfirst }}#}
+{#              </p>#}
+{#          {% endwith %}#}
+{#          {{ '<h1>hello2</h1>' }}#}
+{#          {{ '<h1>hello world</h1>' | add:'go' }}#}
+          {{ 'Panda' | lower }}
+      </p>
+      <form action="" method="post" class="ui form">
+          {% csrf_token %}
+          {{ publisher_form.as_p }}
+          <button class="ui button" type="submit">提交</button>
+      </form>
+
+  </div>
+
+  <script src="//oss.maxcdn.com/jquery/2.1.3/jquery.js"></script>
+  <script src="{% static 'semantic/dist/semantic.js' %}"></script>
+</body>
+</html>
