@@ -10,16 +10,16 @@ def my_filter(value, arg):
     return value.replace(arg, '')
 
 
-@register.filter()
-@stringfilter
-def lower(value):
-    return value.lower()
+# @register.filter()
+# @stringfilter
+# def lower(value):
+#     return value.lower()
 
 
 # 效果一样
-# @register.filter()
-# def lower(value):
-#     return value.lower()
+@register.filter()
+def lower(value):
+    return value.lower()
 
 
 # @register.filter(is_safe=True)
@@ -27,6 +27,7 @@ def lower(value):
 #     return '%s %s' % (value, arg)
 
 
-@register.filter()
+@register.filter(is_safe=True)
 def add(value, arg):
-    return mark_safe('%s %s' % (value, arg))
+    return '%s %s' % (value, arg)
+    # return mark_safe('%s %s' % (value, arg))

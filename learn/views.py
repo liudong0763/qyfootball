@@ -13,3 +13,12 @@ def form(request):
         # print(dir(publisher_form))
 
     return render(request, 'form.html', locals())
+
+
+def authors(request):
+    # author_list = Author.male_authors.all()
+    # author_list = Author.sex_manager.reverse()
+    # author_list = Author.new_sex_manager.all().male_list()
+    author_list = Author.new_sex_manager.male_list()
+    return render(request, 'authors.html', locals())
+

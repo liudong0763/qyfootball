@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+  <meta charset="UTF-8">
+  <title>Semantic UI</title>
+  <link rel="stylesheet" href="{% static 'semantic/dist/semantic.css' %}">
+  <style>
+    body {
+      margin-bottom: 33000px;
+      padding-bottom: 33000px;
+    }
+    .ui.button {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ui container" style="padding:50px">
+
+    <h2 class="ui dividing header">作者列表</h2>
+
+
+    <table class="ui table">
+      <thead>
+        <tr>
+          <th>作者名</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for author in author_list %}
+        <tr>
+          <td>{{ author.name }}</td>
+
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+  </div>
+
+  <script src="//oss.maxcdn.com/jquery/2.1.3/jquery.js"></script>
+  <script src="{% static 'semantic/dist/semantic.js' %}"></script>
+</body>
+</html>
